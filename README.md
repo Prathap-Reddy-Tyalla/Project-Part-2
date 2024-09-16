@@ -1,82 +1,50 @@
-<h1 align="center">City of Vancouver Project Part 2 Assignemnt</h1>
+<h1 align="center">AWS Assignment - 2 </h1>
 
 ___
 
-# Project Description: Exploratory Analysis of Lost and Found Animal Records
-In this assignment I will be describing the details of the City of Vancouver project mainly about the Data concerns of the Data Analytic Platform (DAP) implemented previously. For this assignment I used the processed and published dataset information from website [City of Vancouver Open Data Portal](https://opendata.vancouver.ca/explore/dataset/animal-control-inventory-lost-and-found/export/?disjunctive.breed&disjunctive.color&sort=date&refine.date=2023).
+# Project Description: Descriptive Analysis of 311 Contact Center
+This assignment is continuation for improvement of the [DAP Design & Implementatio For City of Vancouver](https://prathap-reddy-tyalla.github.io/Project-part-1/) project using the datasets taken from  website [City of Vancouver Open Data Portal](https://opendata.vancouver.ca/explore/dataset/animal-control-inventory-lost-and-found/export/?disjunctive.breed&disjunctive.color&sort=date&refine.date=2023). This project concentrates on details of protection, governance and monitoring of DAP.
 
-## Project Title: Understanding the process of ensuring Data Protection, Governance, & Monitoring for DAP
-The primary need of this project is to conduct a exploratory analsis of the process of providing and ensuring the Data Protection, Governance, & Monitoring for DAP model i developed in the previous assignment. This project mainly deals with the process after the basic model fo DAP is developed and implemented. This project mainly discusses on the various tools and technologies used in providing Data Protection, Governance, & Monitoring for DAP model developed.
+## Project Title: Data Protection, Governance, & Monitoring for DAP
+This project concentrates on details of protection, governance and monitoring of DAP. As these 3 are vital thing that must be ensured for all the current project. Lack of any of these three aspects would result in the project execution lacking or even failure of the project. We will see how below:
 ## Project Objective:
-* Designing and implementing the Data Protection options for DAP model.
-* Designing and implementing the Data Governance options for DAP model.
-* Designing and implementing the Data Monitoring options for DAP model.
+* Data Protection design and implementation.
+* Data Governance design and implementation.
+* Data Monitoring design and implementation.
 ## Datasets
-* There are two datasets wi=hich i will be using here.
-* The first dataset is **"Found Inventory Dataset"**, it contains information on animals found, with columns such as:
-  * SNO: Serial Number
-  * Breed: Animal breed
-  * Color: Color description
-  * Date: Date when the animal was found
-  * Name: Name of the animal
-  * Sex: Animal's sex
-  * State: Status (Yes indicating matched or found)
-  * [2024_animal_control_Found_inventory.xlsx](https://github.com/user-attachments/files/16974871/2024_animal_control_Found_inventory.xlsx) contains the information of this match found dataset.
-* The second datset is **"Lost and Found Inventory Dataset"**, it Contains details on lost animals, with similar columns, including:
-  * SNO: Serial Number
-  * Breed: Animal breed
-  * Color: Color description
-  * Date: Date of the record
-  * Name: Name of the animal
-  * Sex: Animal's sex
-  * State: Lost or Found status
-  * [2024_animal_control_inventory_lost_and_found.xlsx](https://github.com/user-attachments/files/16974850/2024_animal_control_inventory_lost_and_found.xlsx) contains the information of this lost and found inventory dataset.
-* Using both these datasets I will be planning my DAP for City of Vancouver.
+* The Dataset used is taken from [City of Vancouver Open Data Portal](https://opendata.vancouver.ca/explore/dataset/3-1-1-contact-centre-metrics/information/) for the category of "3-1-1 contact centre metrics"<br>
+[cummulative-3-1-1-contact-centre-metrics.xlsx](https://github.com/user-attachments/files/17020770/cummulative-3-1-1-contact-centre-metrics.xlsx)
 ## Methodology:
-* The process of Designing and implementing the Data Protection, Governance, & Monitoring for DAP model is complex.
-* This involves 4 different steps. I will be explaining on these steps in detail below:
-### Step 14: Data Enriching
-* This is the step where we are going to define the whole architecture of the DAP.
-* This step includes enhancing my dataset by adding additional information from external or related sources.<br>
-![step014](https://github.com/user-attachments/assets/b9c3405c-0a19-475c-990f-2a1fd4a0fa66)
-* The Above Image contains information of the DAP "**Data Enriching**" step.<br>
-![step014-2](https://github.com/user-attachments/assets/4032d5e0-9a5e-40ce-92e6-c362a7df1378)
-* The Above Image contains information of the DAP "**Data Enriching**" step.<br>
-![step014-3](https://github.com/user-attachments/assets/130e6f76-7fb2-4eb2-8360-448176b7ec69)
-* The Above Image contains information of the DAP "**Data Enriching**" step.
+* The process involves 3 different steps explained in detail below:
 ### Step 15: Data Protection
-* This **Data Protection** involves safeguarding sensitive information from unauthorized access, misuse, or breaches.
-* It is critical when handling datasets that may include personal information about pet owners or internal records.
-* For this we are creating KMS keys for encryption and decryption of data inthe S3 buckets.<br>
-![fig14](https://github.com/user-attachments/assets/7f0f3811-d1ff-4e36-8d5c-77517dc8971e)
-* The above image shows my newly created KMS key information.
-* I am also enabling the Bucket Versioning and encrypting using the KMS key i created for both my S3 bucket and S3 backup bucket I created.<br>
-![fig15](https://github.com/user-attachments/assets/15d46b70-9a5b-48eb-81a9-34b3e7e38d4d)
-* The above images shows my S3 bucket properties information.<br>
-![fig16](https://github.com/user-attachments/assets/c58cb083-03e4-4d23-a4d2-05264aeafdb9)
-* The above images shows my S3 backup bucket properties information.<br>
-* I am also configuring the backup option by doing a mirroring replication of my S3 bucket with another bucket.<br>
-![fig17](https://github.com/user-attachments/assets/d11c43b3-91ca-44f2-a4fe-6167c39f1bf3)
-* The above image shows my replication information.
+* This **Data Protection** providing protectio to data in many ways like encryption or access granting or other methods.<br>
+![step 15-01-kms key creation](https://github.com/user-attachments/assets/9baae4bf-54b8-4de2-91b8-fcdf9f673fef)
+* The above image shows how I created a KMS key for encryption and decryption of data.<br>
+![step 15-01-kms key information](https://github.com/user-attachments/assets/9ea80654-31a3-4c70-86c5-4a9be409c061)
+* The above image shows configuration etails of the KMS key.<br>
+![step 15-02-S3 bucket properties for encryption and bucket versioning](https://github.com/user-attachments/assets/43ccdf8c-fe75-46cf-9ad7-59e0b09e414e)
+* The above image shows the changes made to enable encryption and bucket versioning for S3 bucket.<br>
+![step 15-02-S3 bucket replication rule information](https://github.com/user-attachments/assets/2947229f-1f66-4a8a-b7c2-47464b6b5b46)
+* The above image shows the changes made to enable replication rule for S3 bcket.<br>
+![step 15-02-S3-Backup bucket properties for encryption and bucket versioning](https://github.com/user-attachments/assets/6639ae34-08a5-4dd7-a6b6-39293e96227d)
+* The above image shows the changes made to enable encryption and bucket versioning for S3 backp bucket.<br>
 ### Step 16: Data Governance
-* Data governance refers to the policies, standards, and practices for managing and using data in a way that aligns with organizational goals and regulatory requirements.
-* It ensures the quality, integrity, and security of data across its lifecycle.
-* For this first I am creating Trusted folder where i can store data which has been masked to protect sensitive data information.<br>
-![fig27](https://github.com/user-attachments/assets/42a7f45d-2a77-4427-b4a0-6502f05af6a7)
-* The above image shows the Trusted folder created.
-* I them create an ETL to convert the raw data available using ETL to identify and mask the sensitive information.<br>
-![fig28](https://github.com/user-attachments/assets/e0fb6123-ac94-41f1-b9d8-1c8003ee55a6)
-* The above image shows the ETL pipeline for saving the trusted information from raw data.
-* I then move on to storing the information retrieved from ETL into the trusted folder.<br>
-![fig29](https://github.com/user-attachments/assets/ca5e6f77-1ac7-4b88-8389-86f9df496390)
-* The above image shows the resultant information stored as csv file in trusted folder.
+* Data governance refers to the policies, standards, and practices for managing and using data in a way that aligns with organizational goals and regulatory requirements to ensures the quality, integrity, and security of data across its lifecycle.
+![step 16-01-trusted folder creation in S3 bucket](https://github.com/user-attachments/assets/bd8281fa-1c11-4176-b18a-6a32f4145a8f)
+* The above image shows the trusted folder created in S3 bucket.<br>
+![step 16-02-etl design](https://github.com/user-attachments/assets/1c43b6bb-e499-40d1-b86e-beaa3bc8cb96)
+* The above image shows the ETL designed to mask sensitive data and store it in trusted folder.<br>
+![step 16-02-etl output](https://github.com/user-attachments/assets/c6e30971-5a43-45c4-bd93-57b2a74fb538)
+* The above image shows the results of eTL design.<br>
+![step 16-03-workflow details](https://github.com/user-attachments/assets/fda485fa-c208-4af7-9ac9-3016fbae148c)
+* The above image shows the workflow designed.<br>
 ### Step 17: Data Monitoring
 * Data monitoring involves continuously tracking data usage and access to ensure compliance with governance policies, detect potential breaches, and maintain data integrity.
-* Here we will be using "**AWS CloudWatch**" service to create a dashboard based on our needs.<br>
-![fig39](https://github.com/user-attachments/assets/c2b37041-9b1f-4b57-bb10-98a26f017e8c)
-* The above image displays the dashboard of AWS CloudWatch
-* I then move on to create a user activity trail using the "**AWS CloudTrail**" service, so that i can track user activities for any anomalies.<br>
-![fig40](https://github.com/user-attachments/assets/8b022324-8eb3-4b4e-b7bc-854ad8d49b3c)
-* The above image shows the cloud trail created for tracking user activity.<br>
-![fig41](https://github.com/user-attachments/assets/0af61951-03a0-44ae-8a78-a303ea702d14)
-* The above image displays the information of cloud trail saved in S3.
+![step 17-01-alarm creation in cloudwatch](https://github.com/user-attachments/assets/520e08ea-824f-4eb3-a517-4532b2a83481)
+* The above image shows alarm information.<br>
+![step 17-01-dashboard creation in cloudwatch](https://github.com/user-attachments/assets/dc128e27-c2ff-4374-bb5c-cdcb509d4c17)
+* The above image shows the dashboard.<br>
+![step 17-02-cloudtrail created to track user activity](https://github.com/user-attachments/assets/5ae5a7ed-8aed-45ee-b45d-26f36bd33e09)
+* The above image shows the cloud trail created.<br>
+![step 17-02-s3 bucket created automatically for cloudtrail to track user activity](https://github.com/user-attachments/assets/26df573e-70f0-461a-b200-d26483c13238)
+* The above image shows the cloud trail outcome stored in S3 buckets.<br>
